@@ -28,7 +28,6 @@ while IFS= read -r LINE; do
       ((SCRIPT_COUNTER++))
       #echo $SCRIPT_COUNTER
       SCRIPT_FILE="script/$SCRIPT_COUNTER.$SCRIPT_TYPE"
-      #SCRIPT_OUT_FILE="script_out/$SCRIPT_COUNTER.$SCRIPT_TYPE"
       HEADER_FILE="#!/bin/${SCRIPT_TYPE}"
       [[ $SCRIPT_TYPE == 'php' ]] && HEADER_FILE="<?php"
       echo "$HEADER_FILE" > $SCRIPT_FILE
@@ -53,10 +52,8 @@ while IFS= read -r LINE; do
       echo "$SCRIPT_CMD"
       # Redirected stderr to stdout, stdout to FILE
       { OUTPUT=$( $SCRIPT_CMD 2>>$NEW_FILE 1>&$out); } {out}>>$NEW_FILE
-      #echo "$OUTPUT" >> $NEW_FILE
-      #cat $SCRIPT_OUT_FILE >> $NEW_FILE
       #echo "" >> $NEW_FILE
-      echo "$SEPARATOR" >> $NEW_FILE
+      echo -e "\n$SEPARATOR" >> $NEW_FILE
 
       continue
   else
