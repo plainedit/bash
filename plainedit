@@ -4,51 +4,69 @@ echo "PLAINEDIT takes markdown, evaluates code blocks with interpreters and prin
 FILE=$1
 NEW_FILE=$2
 BASHLINE=
-
+SEPARATOR='```'
+SCRIPT_FILE=
+#set -e
 # START
 echo "" > $NEW_FILE
 SCRIPT_COUNTER=0
 
-## LOOP
 ## read line by LINE
-while read LINE
-do
+while IFS= read -r LINE; do
 
-  echo $LINE
   # save line by line to new file:
   echo "$LINE" >> $NEW_FILE
+  #FOLDER_NAME=${BRANCH//.git}
 
   # if line started with: ```bash
-  if [[ $LINE == '```bash' ]]; then
-      echo $SCRIPT_COUNTER
+  if [[ $LINE == "${SEPARATOR}bash" ]] || [[ $LINE == "${SEPARATOR}sh" ]] || [[ $LINE == "${SEPARATOR}php" ]]; then
+      #LINE_CLEAN=${LINE//[$'\t\r\n']}
+      LINE_CLEAN=$LINE
+      SCRIPT_TYPE=${LINE_CLEAN##*\`}
+       #echo "$LINE_CLEAN"
+      #echo "${SCRIPT_TYPE}"
       ((SCRIPT_COUNTER++))
-      echo $SCRIPT_COUNTER
-      echo "" > "script/$SCRIPT_COUNTER.sh"
+      #echo $SCRIPT_COUNTER
+      SCRIPT_FILE="script/$SCRIPT_COUNTER.$SCRIPT_TYPE"
+      #SCRIPT_OUT_FILE="script_out/$SCRIPT_COUNTER.$SCRIPT_TYPE"
+      HEADER_FILE="#!/bin/${SCRIPT_TYPE}"
+      [[ $SCRIPT_TYPE == 'php' ]] && HEADER_FILE="<?php"
+      echo "$HEADER_FILE" > $SCRIPT_FILE
       BASHLINE="1"
+
       continue
   fi
 
-  echo $BASHLINE
+  #echo $BASHLINE
 
   # if line started with: ```
-  if [[ $BASHLINE == "1" ]] && [[ $LINE == '```' ]]; then
+  if [[ $BASHLINE == "1" ]] && [[ $LINE == "${SEPARATOR}" ]]; then
       BASHLINE=""
-      echo "EXECUTE: ${SCRIPT_COUNTER}.sh"
-      echo ' EXECUTE bash' >> $NEW_FILE
-      echo '```bash' >> $NEW_FILE
-      sh script/${SCRIPT_COUNTER}.sh >> $NEW_FILE
-      echo '```' >> $NEW_FILE
+      #echo "EXECUTED: ${SCRIPT_COUNTER}.sh"
+      echo "EXECUTED ${SCRIPT_TYPE}:" >> $NEW_FILE
+      echo "${SEPARATOR}${SCRIPT_TYPE}" >> $NEW_FILE
+      CMD="sh"
+      [[ $SCRIPT_TYPE != 'bash' ]] && CMD=$SCRIPT_TYPE
+      SCRIPT_CMD="./script/$SCRIPT_COUNTER.$SCRIPT_TYPE"
+      [[ $SCRIPT_TYPE == 'php' ]] && SCRIPT_CMD="$CMD script/$SCRIPT_COUNTER.$SCRIPT_TYPE"
+      #EXECUTE="$CMD $SCRIPT_FILE"
+      echo "$SCRIPT_CMD"
+      # Redirected stderr to stdout, stdout to FILE
+      { OUTPUT=$( $SCRIPT_CMD 2>>$NEW_FILE 1>&$out); } {out}>>$NEW_FILE
+      #echo "$OUTPUT" >> $NEW_FILE
+      #cat $SCRIPT_OUT_FILE >> $NEW_FILE
+      #echo "" >> $NEW_FILE
+      echo "$SEPARATOR" >> $NEW_FILE
 
-      #sh script/${SCRIPT_COUNTER}.sh > "script_out/$SCRIPT_COUNTER.txt"
-      #cat script_out/${SCRIPT_COUNTER}.txt
-      #cat "script_out/$SCRIPT_COUNTER.txt" >> $NEW_FILE
       continue
   else
+
     # if $BASHLINE
     if [[ $BASHLINE != "" ]]; then
-      echo "$LINE" >> "script/$SCRIPT_COUNTER.sh"
+      echo -e "$LINE"
+      echo -e "$LINE" >> $SCRIPT_FILE
     fi
-  fi
 
+  fi
 
 done < $FILE
