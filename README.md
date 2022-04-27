@@ -4,11 +4,15 @@
 
 PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the output of those processes to a different codeblock.
 
-## START
+## EXAMPLE:
 
 ```bash
 ./plainedit "test.md" "test_out.md"
 ```
+
+---
+
+OUTPUT FILE:
 
 ---
 
@@ -62,6 +66,8 @@ EXECUTED php:
 ```php
 Apple
 ```
+
+---
 
 ---
 
