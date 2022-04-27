@@ -76,6 +76,12 @@ pod2text test_out.md
 
 ## TODO:
 
++ wirtualne środowisko do uruchamiania skryptów, np docker
++ uruchamianie zdalnie poprzez SSH, dla kazdej komendy na oddzielnej maszynie
+  + testy na dockerach
++ wysyłanie email z załącznikiem markdown po wygenerowaniu:
+  + ./plainedit "test.md" "test_out.md" "test@test.com"
+
 + czy string zawiera jakikolwiek skrypt z listy:
   + bash
   + sh
