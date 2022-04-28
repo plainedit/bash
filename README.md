@@ -100,8 +100,10 @@ pod2text test_out.md
 
 ## TODO:
 
-zachowani, flagi przy skrypcie
-    
+zachowania plainedit przy przetwarzaniu skryptów:
+
+Przykłądowe flagi przy skrypcie:
+
     ```bash HIDE RENDER
     curl site.com
     ```
