@@ -100,9 +100,16 @@ pod2text test_out.md
 
 ## TODO:
 
+
++ repo do examples z przykładem ładowania
+
+COMMAND
++ obsługa XPATH, ładowanie skrawka strony 
+
+
 zachowania plainedit przy przetwarzaniu skryptów:
 
-Przykłądowe flagi przy skrypcie:
+Przykładowe flagi przy skrypcie:
 
     ```bash HIDE RENDER
     curl site.com
@@ -134,6 +141,7 @@ obsługa różnych mimietype:
 
 Środowiska:
 
++ ENV per LANG: python env, npm
 + plik konfiguracyjny
 + wirtualne środowisko do uruchamiania skryptów, np docker
 + uruchamianie zdalnie poprzez SSH, dla kazdej komendy na oddzielnej maszynie
@@ -141,7 +149,11 @@ obsługa różnych mimietype:
 + wysyłanie email z załącznikiem markdown po wygenerowaniu:
   + ./plainedit "test.md" "test_out.md" "test@test.com"
 
+Marketplaces
 
+pobieranie bibliotek w celu wykonania 
++ Ładowanie z npm
++ 
 
 xpath
 
