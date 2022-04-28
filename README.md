@@ -11,6 +11,16 @@ PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the
 + simply script easy to understand with basic functions
 + all examples are rendered through one run in shell
 
+### MODE
+
++ show command from source and output from script
++ show only output from script as text, 
+  + json - html colorised
+  + csv - table
++ show only output from script as such detected files:
+  + image- jpg,png,gif
+  + html website, e.g CURL command -> screenshoot image
+  + 
 
 ## EXAMPLE:
 
@@ -60,10 +70,10 @@ class Fruit {
     public $name;
   
     function __construct($name) {
-    $this->name = $name;
+      $this->name = $name;
     }
     function __toString() {
-    return $this->name;
+      return $this->name;
     }
 }
 
@@ -90,11 +100,22 @@ pod2text test_out.md
 
 ## TODO:
 
-+ wirtualne środowisko do uruchamiania skryptów, np docker
-+ uruchamianie zdalnie poprzez SSH, dla kazdej komendy na oddzielnej maszynie
-  + testy na dockerach
-+ wysyłanie email z załącznikiem markdown po wygenerowaniu:
-  + ./plainedit "test.md" "test_out.md" "test@test.com"
+zachowani, flagi przy skrypcie
+    
+    ```bash HIDE RENDER
+    curl site.com
+    ```
+    
+INPUT:
++ pokaż input, DEFAULT: [SHOW]
++ ukryj input, [HIDE]
+
+OUTPUT:
++ pokaż output jako narzucony format mimetype, [JSON] [XML] [CSV]
+  + pokaż output jako text, DEFAULT: [TEXT]
++ pokaż output jako wykryty mimetype, [RENDER]
+
+obsługiwane języki programowania
 
 + czy string zawiera jakikolwiek skrypt z listy:
   + bash
@@ -102,7 +123,23 @@ pod2text test_out.md
   + php
   + js
   + java
-  + 
+
+obsługa różnych mimietype:
+
++ obsługa CURL API
++ obsługa CURL HTML -> SCREENSHOT i załączenie PNG
++ obsługa CURL z kolorwaniem i formatami + auth
+
+Środowiska:
+
++ plik konfiguracyjny
++ wirtualne środowisko do uruchamiania skryptów, np docker
++ uruchamianie zdalnie poprzez SSH, dla kazdej komendy na oddzielnej maszynie
+  + testy na dockerach
++ wysyłanie email z załącznikiem markdown po wygenerowaniu:
+  + ./plainedit "test.md" "test_out.md" "test@test.com"
+
+
 
 xpath
 
