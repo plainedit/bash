@@ -2,9 +2,9 @@
 
 # WHOAMI
 
-Check your user
+My name is:
 
-```bash
+```bash HIDE
 whoami
 ```
 
@@ -59,7 +59,7 @@ echo (string ) $apple;
 
 Show your folders
 
-```bash
+```
 ping -q -c 1 softreck.com ; echo $?
 ```
 

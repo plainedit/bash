@@ -10,6 +10,7 @@ PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the
 ### BENEFITS
 + simply script easy to understand with basic functions
 + all examples are rendered through one run in shell
++ running code on remote server 
 
 ### MODE
 
@@ -20,7 +21,7 @@ PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the
 + show only output from script as such detected files:
   + image- jpg,png,gif
   + html website, e.g CURL command -> screenshoot image
-  + 
+
 
 ## EXAMPLE:
 
@@ -100,10 +101,26 @@ pod2text test_out.md
 
 ## TODO:
 
+### RUN REMOTE:
+
++ uruchamianie na zewnętrznej, zdalnej maszynie
++ pobieranie dodatkowych tresci ze zdalnych usług poprzez API,
+  + np korekta kodu
+
+INPUT 
+OUTPUT autokorekta z API
+
+student otrzymuje arkusz z zadaniami
+wypelnia pola INPUT
+
+Nauczyciel sprawdza zadania automatycznie po uruchomieniu
+
+pattern > */
+output > start validation
 
 + repo do examples z przykładem ładowania
 
-COMMAND
+### COMMAND
 + obsługa XPATH, ładowanie skrawka strony
 
 [Parsing HTML with Xpath](https://scrapfly.io/blog/parsing-html-with-xpath/)
@@ -112,6 +129,9 @@ Xpath and markdown – how to interoperate
 
 
 zachowania plainedit przy przetwarzaniu skryptów:
+
+
+### FLAGI
 
 Przykładowe flagi przy skrypcie:
 
@@ -126,9 +146,9 @@ INPUT:
 OUTPUT:
 + pokaż output jako narzucony format mimetype, [JSON] [XML] [CSV]
   + pokaż output jako text, DEFAULT: [TEXT]
-+ pokaż output jako wykryty mimetype, [RENDER]
++ pokaż output jako wykryty mimetype, [PNG] [GIF] [HEX] [BASE64] [HTML]
 
-obsługiwane języki programowania
+### obsługiwane języki programowania
 
 + czy string zawiera jakikolwiek skrypt z listy:
   + bash
@@ -137,13 +157,13 @@ obsługiwane języki programowania
   + js
   + java
 
-obsługa różnych mimietype:
+### obsługa różnych mimietype:
 
 + obsługa CURL API
 + obsługa CURL HTML -> SCREENSHOT i załączenie PNG
 + obsługa CURL z kolorwaniem i formatami + auth
 
-Środowiska:
+### Środowiska:
 
 + ENV per LANG: python env, npm
 + plik konfiguracyjny
@@ -153,24 +173,24 @@ obsługa różnych mimietype:
 + wysyłanie email z załącznikiem markdown po wygenerowaniu:
   + ./plainedit "test.md" "test_out.md" "test@test.com"
 
-Marketplaces
+### Marketplaces
 
 pobieranie bibliotek w celu wykonania 
 + Ładowanie z npm
 
 
-## Lokalne srodowisko w przeglądarce:
+### Lokalne srodowisko w przeglądarce:
 
 1. lokalny client i serwer + lokalny shell
 2. lokalny client i serwer + docker
 3. lokalny client i serwer + ssh
 
-## SAAS:
+### SAAS:
 
 5. zdalny server + docker
 6. zdalny server + docker + ssh
 
-## Usługi:
+### Usługi:
 
 + plainedit.com/:user/:project/#markdown
 + deploy.plainedit.com/:language
