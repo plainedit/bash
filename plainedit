@@ -31,6 +31,7 @@ while IFS= read -r LINE; do
 
   case $LINE in ${SEPARATOR}*)
      FIRST_SEPARATOR_IN_LINE=1
+
      LINE_CLEAN=$LINE
      FLAGS=${LINE_CLEAN##*\`}
      IFS=' ' read -r -a array <<< "$FLAGS"
@@ -41,9 +42,12 @@ while IFS= read -r LINE; do
      echo "$FLAGS"
      echo "$LANGUAGE"
      echo "$HIDE"
+
   esac
 
 
+  echo "-$SCRIPT_HIDE-"
+  echo "-$ONLY_EXECUTED-"
 
   # if line started with: ```bash
   if [[ ! -z "$FIRST_SEPARATOR_IN_LINE" ]] && [[ ! -z "$LANGUAGE" ]] && [[ -z "$SCRIPT_HIDE" ]];
@@ -64,9 +68,11 @@ while IFS= read -r LINE; do
 
       if [[ -z "$ONLY_EXECUTED" ]] && [[ -z "$SCRIPT_HIDE" ]];
       then
+        echo ""
         echo "$LINE" >> $NEW_FILE
       fi
 
+      #echo "$LINE" >> $NEW_FILE
       continue
   fi
 
@@ -81,11 +87,13 @@ while IFS= read -r LINE; do
   #echo $BASHLINE
 
   # if line started with: ```
-  if [[ $BASHLINE == "1" ]] && [[ $LINE == "${SEPARATOR}" ]];
+  if [[ ! -z "$BASHLINE" ]] && [[ $LINE == "${SEPARATOR}" ]];
   then
       BASHLINE=
 
-      if [[ -z "$SCRIPT_HIDE" ]] && [[ ! -z "$ONLY_EXECUTED" ]] && [[ -z "$SCRIPT_HIDE" ]]; then
+      if [[ -z "$SCRIPT_HIDE" ]];
+      then
+      #if [[ -z "$SCRIPT_HIDE" ]] && [[ -z "$SCRIPT_HIDE" ]] || [[ ! -z "$ONLY_EXECUTED" ]]; then
         #echo "EXECUTED: ${SCRIPT_COUNTER}.sh"
         echo "EXECUTED ${SCRIPT_LANGUAGE}:" >> $NEW_FILE
         echo "${SEPARATOR}${SCRIPT_LANGUAGE}" >> $NEW_FILE
@@ -100,10 +108,11 @@ while IFS= read -r LINE; do
         #echo "" >> $NEW_FILE
 
         echo -e "\n$SEPARATOR" >> $NEW_FILE
+        SCRIPT_HIDE=
         continue
-
       fi
       SCRIPT_HIDE=
+
   else
 
     # if $BASHLINE and NOT HIDE
