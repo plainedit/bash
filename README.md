@@ -104,7 +104,11 @@ pod2text test_out.md
 + repo do examples z przykładem ładowania
 
 COMMAND
-+ obsługa XPATH, ładowanie skrawka strony 
++ obsługa XPATH, ładowanie skrawka strony
+
+[Parsing HTML with Xpath](https://scrapfly.io/blog/parsing-html-with-xpath/)
+
+Xpath and markdown – how to interoperate
 
 
 zachowania plainedit przy przetwarzaniu skryptów:
@@ -153,10 +157,24 @@ Marketplaces
 
 pobieranie bibliotek w celu wykonania 
 + Ładowanie z npm
-+ 
 
-xpath
 
-[Parsing HTML with Xpath](https://scrapfly.io/blog/parsing-html-with-xpath/)
+## Lokalne srodowisko w przeglądarce:
 
-Xpath and markdown – how to interoperate
+1. lokalny client i serwer + lokalny shell
+2. lokalny client i serwer + docker
+3. lokalny client i serwer + ssh
+
+## SAAS:
+
+5. zdalny server + docker
+6. zdalny server + docker + ssh
+
+## Usługi:
+
++ plainedit.com/:user/:project/#markdown
++ deploy.plainedit.com/:language
++ render.plainedit.com/:mimetype/:input
++ screenshot.plainedit.com/:url/:mimetype
+
+
