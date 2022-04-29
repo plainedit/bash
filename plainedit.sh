@@ -57,9 +57,11 @@ fi
 # ./plainedit.sh "1/in.md" "1/out.md" "1/auth.csv"
 # START
 if [ "$SECOND" = "" ]; then
-  IN="$FIRST/in.md"
-  OUT="$FIRST/out.md"
-  AUTH="$FIRST/auth.md"
+  IN="in.md"
+  #IN="$FIRST/in.md"
+  OUT="out.md"
+  #OUT="$FIRST/out.md"
+  #AUTH="$FIRST/auth.md"
 else
   IN=$FIRST
   OUT=$SECOND
