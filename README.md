@@ -43,22 +43,25 @@ Supported languages:
   + html website, e.g CURL command -> screenshoot image
 
 
-## EXAMPLE:
+## START PlainEdit Script
 
-Input and output file
+Input and output file with results:
 ```bash
 ./plainedit.sh "test.md" "test_out.md"
 ```
 
-Folder with projects
+Markdow in Project Folder
 ```bash
 ./plainedit.sh "1/in.md" "1/out.md"
 ```
 
 PlainEdit can be executed from another bash script with defined path
+Look at examples: [Examples - examples.plainedit.com](https://examples.plainedit.com/)
 ```bash
 ./plainedit.sh --path "/media/tom/projects/plainedit/1" "in.md" "out.md"
 ```
+
+## RESULT:
 
 ---
 
