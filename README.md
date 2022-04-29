@@ -35,9 +35,19 @@ PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the
 
 
 ## EXAMPLE:
-
+Input and output file
 ```bash
 ./plainedit.sh "test.md" "test_out.md"
+```
+
+Folder with projects
+```bash
+./plainedit.sh "1/in.md" "1/out.md"
+```
+
+PlainEdit can be executed from another bash script with defined path
+```bash
+./plainedit.sh --path "/media/tom/projects/plainedit/1" "in.md" "out.md"
 ```
 
 ---

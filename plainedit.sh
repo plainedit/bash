@@ -31,12 +31,12 @@ dir_path=$(dirname $full_path)
 ## load all params: in out status
 if [ "$1" = "--path" ]; then
   dir_path=$2
-  IN=$3
-  OUT=$4
+  #IN=$3
+  #OUT=$4
   FIRST=$3
   SECOND=$4
 fi
-echo "PATH $dir_path"
+echo "PATH: $dir_path"
 
 # EXAMPLE
 # ./plainedit.sh
@@ -67,18 +67,10 @@ fi
 # EXAMPLE
 # ./plainedit "test.md" "test_out.md"
 # START
-#full_path=$(realpath $0)
-#echo $full_path
-#dir_path=$(dirname $full_path)
-#dir_path=$(dirname $dir_path)
-#echo $dir_path
-# check if script exist
-#PROJECT=OUT
-#FILE_OUT=${dir_path}/${PROJECT}/${NEW_FILE}
 FILE_IN=${dir_path}/${IN}
 FILE_OUT=${dir_path}/${OUT}
-echo "IN $FILE_IN"
-echo "OUT $FILE_OUT"
+echo "IN: $FILE_IN"
+echo "OUT: $FILE_OUT"
 #
 echo "" > $FILE_OUT
 SCRIPT_COUNTER=0
@@ -124,7 +116,7 @@ while IFS= read -r LINE; do
       #echo "${SCRIPT_TYPE}"
       ((SCRIPT_COUNTER++))
       #echo $SCRIPT_COUNTER
-      SCRIPT_FILE="$dir_path/script/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
+      SCRIPT_FILE="$dir_path/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
       HEADER_FILE="#!/bin/${SCRIPT_LANGUAGE}"
       [[ $SCRIPT_LANGUAGE == 'php' ]] && HEADER_FILE="<?php"
       echo "$HEADER_FILE" > $SCRIPT_FILE
