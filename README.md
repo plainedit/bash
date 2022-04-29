@@ -12,7 +12,7 @@ PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the
 + [Website - www.plainedit.com](http://www.plainedit.com/)
 + [News - blog.plainedit.com](http://blog.plainedit.com/)
 + [Offer - offer.plainedit.com](http://offer.plainedit.com/)
-+ [logo.apimacro.com](https://logo.apimacro.com/)
++ [logo.plainedit.com](https://logo.plainedit.com/)
 
 ## About  PlainEdit 
 
