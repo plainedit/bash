@@ -29,14 +29,14 @@ full_path=$(realpath $0)
 dir_path=$(dirname $full_path)
 
 ## load all params: in out status
-if [ "$1" = "-cfg" ]; then
+if [ "$1" = "--path" ]; then
   dir_path=$2
   IN=$3
   OUT=$4
   FIRST=$3
   SECOND=$4
 fi
-echo "CFG $dir_path"
+echo "PATH $dir_path"
 
 # EXAMPLE
 # ./plainedit.sh
