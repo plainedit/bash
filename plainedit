@@ -55,7 +55,16 @@ fi
 # EXAMPLE
 # ./plainedit "test.md" "test_out.md"
 # START
-echo "" > $NEW_FILE
+full_path=$(realpath $0)
+#echo $full_path
+dir_path=$(dirname $full_path)
+#echo $dir_path
+# check if script exist
+#PROJECT=OUT
+#NEW_FILE_PATH=${dir_path}/${PROJECT}/${NEW_FILE}
+NEW_FILE_PATH=${dir_path}/${NEW_FILE}
+
+echo "" > $NEW_FILE_PATH
 SCRIPT_COUNTER=0
 
 ## read line by LINE
@@ -108,17 +117,17 @@ while IFS= read -r LINE; do
       if [[ -z "$ONLY_EXECUTED" ]] && [[ -z "$SCRIPT_HIDE" ]];
       then
         echo ""
-        echo "$LINE" >> $NEW_FILE
+        echo "$LINE" >> $NEW_FILE_PATH
       fi
 
-      #echo "$LINE" >> $NEW_FILE
+      #echo "$LINE" >> $NEW_FILE_PATH
       continue
   fi
 
 
   if [[ -z "$ONLY_EXECUTED" ]] && [[ -z "$SCRIPT_HIDE" ]];
   then
-    echo "$LINE" >> $NEW_FILE
+    echo "$LINE" >> $NEW_FILE_PATH
   else
     echo "NOT SHOW: $LINE"
   fi
@@ -134,8 +143,8 @@ while IFS= read -r LINE; do
       then
       #if [[ -z "$SCRIPT_HIDE" ]] && [[ -z "$SCRIPT_HIDE" ]] || [[ ! -z "$ONLY_EXECUTED" ]]; then
         #echo "EXECUTED: ${SCRIPT_COUNTER}.sh"
-        echo "EXECUTED ${SCRIPT_LANGUAGE}:" >> $NEW_FILE
-        echo "${SEPARATOR}${SCRIPT_LANGUAGE}" >> $NEW_FILE
+        echo "EXECUTED ${SCRIPT_LANGUAGE}:" >> $NEW_FILE_PATH
+        echo "${SEPARATOR}${SCRIPT_LANGUAGE}" >> $NEW_FILE_PATH
         CMD="sh"
         [[ $SCRIPT_LANGUAGE != 'bash' ]] && CMD=$SCRIPT_LANGUAGE
         SCRIPT_CMD="./script/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
@@ -143,10 +152,10 @@ while IFS= read -r LINE; do
         #EXECUTE="$CMD $SCRIPT_FILE"
         echo "$SCRIPT_CMD"
         # Redirected stderr to stdout, stdout to FILE
-        { OUTPUT=$( $SCRIPT_CMD 2>>$NEW_FILE 1>&$out); } {out}>>$NEW_FILE
-        #echo "" >> $NEW_FILE
+        { OUTPUT=$( $SCRIPT_CMD 2>>$NEW_FILE_PATH 1>&$out); } {out}>>$NEW_FILE_PATH
+        #echo "" >> $NEW_FILE_PATH
 
-        echo -e "\n$SEPARATOR" >> $NEW_FILE
+        echo -e "\n$SEPARATOR" >> $NEW_FILE_PATH
         SCRIPT_HIDE=
         continue
       fi
