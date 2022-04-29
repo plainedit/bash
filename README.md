@@ -25,6 +25,20 @@ Supported languages:
 + php
 + js
 + java
++ groovy
+
+
+Supported environments:
+
++ Docker
++ kubernetes
+
+
+Supported API:
+
++ github
++ gitlab
++ 
 
 ### BENEFITS
 
@@ -180,8 +194,9 @@ Zamiana danych na base64
 Folder zawierające usługi, które trzeba zainstalować w przypadku, gdy nie istnieją w lokalnym lub zdalnym środowisku
 Istnieje możliwość wykorzystania jednego z predefiniowanych środowisk, które zawierają potrzebne usługi
 
-
+#### Docker
 Budowanie dokera na podstawie konfiguracji
+Build your Docker File using the following instructions:
 
     ```docker
     #This is a sample Image
@@ -193,9 +208,29 @@ Budowanie dokera na podstawie konfiguracji
     CMD [“echo”,”Image created”]
     ```
 
+
     ```service
     docker run --rm -v /usr/local/bin:/target jpetazzo/nsenter
     ```
+
+#### Apache Camel
+Example of API prepared with kamel and groovy
+
+    ```kamel_groovy
+    def prop = "toString"
+    from("rest:get:hello:/french/{me}")
+      .transform().simple("Bonjour $prop")
+      .to("log:message")
+    ```
+
+Move files between folders
+
+    ```kamel_groovy
+    from("file://home/tom/camel/in?fileName=temp.txt&fileExist=Append")
+      .log(" --- Show FILE from PATH")
+      .to("file://home/tom/camel/out")
+      .to("log:message")
+    ```    
 
 ### Operacje na CSV
 
