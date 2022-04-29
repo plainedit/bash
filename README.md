@@ -12,7 +12,12 @@ PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the
 + [Offer - offer.plainedit.com](http://offer.plainedit.com/)
 + [logo.plainedit.com](https://logo.plainedit.com/)
 
+
 ## About  PlainEdit 
+
+Narzędzie, edytor plainedit do prototypowania z wieloma językami programowania w różnych środowiskach
+pozwala na pokazanie idei na jednej kartce/stronie z przykładami urochomionego i działającego kodu
+pozwala szybko zebrać wiele różnych elementów z różnych środowisk i przygotować np raport
 
 ### USAGE
 
@@ -38,7 +43,8 @@ Supported API:
 
 + github
 + gitlab
-+ 
++ cloudflare
++ digitalcloud
 
 ### BENEFITS
 
