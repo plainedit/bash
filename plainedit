@@ -8,8 +8,8 @@ LOGS="logs.txt"
 
 echo "PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the output of those processes to a different codeblock."
 # CONFIG
-FILE=$1
-NEW_FILE=$2
+FILE_IN=$1
+FILE_OUT=$2
 BASHLINE=
 SEPARATOR='```'
 SCRIPT_FILE=
@@ -50,7 +50,7 @@ else
   # ./plainedit.sh "2/in.md" "2/out.md" "2/status.md"
   IN=$1
   OUT=$2
-  AUTH=$3
+  #AUTH=$3
 fi
 # EXAMPLE
 # ./plainedit "test.md" "test_out.md"
@@ -61,11 +61,13 @@ dir_path=$(dirname $full_path)
 #echo $dir_path
 # check if script exist
 #PROJECT=OUT
-#NEW_FILE_PATH=${dir_path}/${PROJECT}/${NEW_FILE}
-NEW_FILE=$OUT
-NEW_FILE_PATH=${dir_path}/${NEW_FILE}
-
-echo "" > $NEW_FILE_PATH
+#FILE_OUT=${dir_path}/${PROJECT}/${NEW_FILE}
+FILE_IN=${dir_path}/${IN}
+FILE_OUT=${dir_path}/${OUT}
+echo "IN $FILE_IN"
+echo "OUT $FILE_OUT"
+#
+echo "" > $FILE_OUT
 SCRIPT_COUNTER=0
 
 ## read line by LINE
@@ -118,17 +120,17 @@ while IFS= read -r LINE; do
       if [[ -z "$ONLY_EXECUTED" ]] && [[ -z "$SCRIPT_HIDE" ]];
       then
         echo ""
-        echo "$LINE" >> $NEW_FILE_PATH
+        echo "$LINE" >> $FILE_OUT
       fi
 
-      #echo "$LINE" >> $NEW_FILE_PATH
+      #echo "$LINE" >> $FILE_OUT
       continue
   fi
 
 
   if [[ -z "$ONLY_EXECUTED" ]] && [[ -z "$SCRIPT_HIDE" ]];
   then
-    echo "$LINE" >> $NEW_FILE_PATH
+    echo "$LINE" >> $FILE_OUT
   else
     echo "NOT SHOW: $LINE"
   fi
@@ -144,8 +146,8 @@ while IFS= read -r LINE; do
       then
       #if [[ -z "$SCRIPT_HIDE" ]] && [[ -z "$SCRIPT_HIDE" ]] || [[ ! -z "$ONLY_EXECUTED" ]]; then
         #echo "EXECUTED: ${SCRIPT_COUNTER}.sh"
-        echo "EXECUTED ${SCRIPT_LANGUAGE}:" >> $NEW_FILE_PATH
-        echo "${SEPARATOR}${SCRIPT_LANGUAGE}" >> $NEW_FILE_PATH
+        echo "EXECUTED ${SCRIPT_LANGUAGE}:" >> $FILE_OUT
+        echo "${SEPARATOR}${SCRIPT_LANGUAGE}" >> $FILE_OUT
         CMD="sh"
         [[ $SCRIPT_LANGUAGE != 'bash' ]] && CMD=$SCRIPT_LANGUAGE
         SCRIPT_CMD="./script/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
@@ -153,10 +155,10 @@ while IFS= read -r LINE; do
         #EXECUTE="$CMD $SCRIPT_FILE"
         echo "$SCRIPT_CMD"
         # Redirected stderr to stdout, stdout to FILE
-        { OUTPUT=$( $SCRIPT_CMD 2>>$NEW_FILE_PATH 1>&$out); } {out}>>$NEW_FILE_PATH
-        #echo "" >> $NEW_FILE_PATH
+        { OUTPUT=$( $SCRIPT_CMD 2>>$FILE_OUT 1>&$out); } {out}>>$FILE_OUT
+        #echo "" >> $FILE_OUT
 
-        echo -e "\n$SEPARATOR" >> $NEW_FILE_PATH
+        echo -e "\n$SEPARATOR" >> $FILE_OUT
         SCRIPT_HIDE=
         continue
       fi
@@ -174,4 +176,4 @@ while IFS= read -r LINE; do
   fi
 
 
-done < $FILE
+done < $FILE_IN
