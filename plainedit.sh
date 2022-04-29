@@ -22,12 +22,26 @@ ONLY_EXECUTED=
 #set -e
 
 # CONFIG
+# ./plainedit.sh "2/in.md" "2/out.md" "2/status.md"
+FIRST=$1
+SECOND=$2
+full_path=$(realpath $0)
+dir_path=$(dirname $full_path)
+
 ## load all params: in out status
+if [ "$1" = "-cfg" ]; then
+  dir_path=$2
+  IN=$3
+  OUT=$4
+  FIRST=$3
+  SECOND=$4
+fi
+echo "CFG $dir_path"
 
 # EXAMPLE
 # ./plainedit.sh
 # START
-if [ "$1" = "" ]; then
+if [ "$FIRST" = "" ]; then
   for FILE in */in.md; do
     line=$(head -n 1 $FILE)
     #echo "$FILE $line"
@@ -42,22 +56,21 @@ fi
 # ./plainedit.sh 1
 # ./plainedit.sh "1/in.md" "1/out.md" "1/auth.csv"
 # START
-if [ "$2" = "" ]; then
-  IN="$1/in.md"
-  OUT="$1/out.md"
-  AUTH="$1/auth.md"
+if [ "$SECOND" = "" ]; then
+  IN="$FIRST/in.md"
+  OUT="$FIRST/out.md"
+  AUTH="$FIRST/auth.md"
 else
-  # ./plainedit.sh "2/in.md" "2/out.md" "2/status.md"
-  IN=$1
-  OUT=$2
-  #AUTH=$3
+  IN=$FIRST
+  OUT=$SECOND
 fi
 # EXAMPLE
 # ./plainedit "test.md" "test_out.md"
 # START
-full_path=$(realpath $0)
+#full_path=$(realpath $0)
 #echo $full_path
-dir_path=$(dirname $full_path)
+#dir_path=$(dirname $full_path)
+#dir_path=$(dirname $dir_path)
 #echo $dir_path
 # check if script exist
 #PROJECT=OUT
@@ -89,16 +102,16 @@ while IFS= read -r LINE; do
      LANGUAGE="${array[0]}"
      HIDE="${array[1]}"
      HIDE_INPUT="${array[2]}"
-     echo "FLAGS"
-     echo "$FLAGS"
-     echo "$LANGUAGE"
-     echo "$HIDE"
+     #echo "FLAGS"
+     #echo "$FLAGS"
+     #echo "$LANGUAGE"
+     #echo "$HIDE"
 
   esac
 
 
-  echo "-$SCRIPT_HIDE-"
-  echo "-$ONLY_EXECUTED-"
+  #echo "-$SCRIPT_HIDE-"
+  #echo "-$ONLY_EXECUTED-"
 
   # if line started with: ```bash
   if [[ ! -z "$FIRST_SEPARATOR_IN_LINE" ]] && [[ ! -z "$LANGUAGE" ]] && [[ -z "$SCRIPT_HIDE" ]];
