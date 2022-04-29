@@ -124,7 +124,7 @@ while IFS= read -r LINE; do
       #echo "${SCRIPT_TYPE}"
       ((SCRIPT_COUNTER++))
       #echo $SCRIPT_COUNTER
-      SCRIPT_FILE="script/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
+      SCRIPT_FILE="$dir_path/script/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
       HEADER_FILE="#!/bin/${SCRIPT_LANGUAGE}"
       [[ $SCRIPT_LANGUAGE == 'php' ]] && HEADER_FILE="<?php"
       echo "$HEADER_FILE" > $SCRIPT_FILE
