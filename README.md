@@ -135,11 +135,71 @@ pod2text test_out.md
 ## TODO:
 
 
-### INTERNAL COMMAND
+### INTERNAL COMMANDS
 
 + obsługa XPATH, ładowanie skrawka strony
 Xpath and markdown – how to interoperate
 [Parsing HTML with Xpath](https://scrapfly.io/blog/parsing-html-with-xpath/)
+
+extract data from website:
+
+    ```command
+    xpath http://example.org/home.html //title
+    ```
+
+screenshot:
+
+    ```command
+    screenshot http://example.org/home.html 100px 200px
+    ```
+
+Dostęp do zewnętrznego API z autoryzacją
+
+    ```api
+    http://example.org/
+    ```
+
+Ładowanie plików na potrzeby projektu, np IMG z internetu, by je lokalnie załączyć jako base64
+
+    ```download
+    http://example.org/
+    ```
+
+Zamiana danych na base64 
+
+    ```encode_base64
+    data to encode
+    ```
+
+    ```decode_base64
+    data to decode
+    ```
+
+### SERVICE
+
+Folder zawierające usługi, które trzeba zainstalować w przypadku, gdy nie istnieją w lokalnym lub zdalnym środowisku
+Istnieje możliwość wykorzystania jednego z predefiniowanych środowisk, które zawierają potrzebne usługi
+
+
+Budowanie dokera na podstawie konfiguracji
+
+    ```docker
+    #This is a sample Image
+    FROM ubuntu
+    MAINTAINER demousr@gmail.com
+    
+    RUN apt-get update
+    RUN apt-get install –y nginx
+    CMD [“echo”,”Image created”]
+    ```
+
+    ```service
+    docker run --rm -v /usr/local/bin:/target jpetazzo/nsenter
+    ```
+
+### Operacje na CSV
+
+tak jak w apimacro, generowanie wyników CSV na podsatwie danych wejściowych z CSV
 
 
 ### FLAGI + CONFIG
@@ -152,7 +212,10 @@ FlAGI ustawiane domyślne z pliku konfiguracyjnego o nazwie:
 
 Przykładowe flagi przy skrypcie:
 
-    ```bash HIDE RENDER
+ukrywa input, pokazuje sam OUTPUT 
+renderuje do formatu
+
+    ```bash HIDE HTML
     curl site.com
     ```
     
