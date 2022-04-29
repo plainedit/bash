@@ -4,7 +4,7 @@
 
 My name is:
 
-```bash HIDE
+```bash hide_input
 whoami
 ```
 
@@ -13,7 +13,7 @@ whoami
 
 Create new Folder
 
-```bash
+```bash hide_output
 mkdir TEST
 ```
 
@@ -22,7 +22,7 @@ mkdir TEST
 
 Show your folders  
 
-```bash
+```bash hide_input render_html 
 ls -la
 ```
 

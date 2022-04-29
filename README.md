@@ -131,7 +131,12 @@ Xpath and markdown – how to interoperate
 zachowania plainedit przy przetwarzaniu skryptów:
 
 
-### FLAGI
+### FLAGI + CONFIG
+
+FlAGI ustawiane domyślne z pliku konfiguracyjnego o nazwie: 
+
+.plainedit.cfg
+
 
 Przykładowe flagi przy skrypcie:
 
@@ -148,6 +153,7 @@ OUTPUT:
   + pokaż output jako text, DEFAULT: [TEXT]
 + pokaż output jako wykryty mimetype, [PNG] [GIF] [HEX] [BASE64] [HTML]
 
+
 ### obsługiwane języki programowania
 
 + czy string zawiera jakikolwiek skrypt z listy:
@@ -156,6 +162,7 @@ OUTPUT:
   + php
   + js
   + java
+
 
 ### obsługa różnych mimietype:
 
@@ -196,5 +203,42 @@ pobieranie bibliotek w celu wykonania
 + deploy.plainedit.com/:language
 + render.plainedit.com/:mimetype/:input
 + screenshot.plainedit.com/:url/:mimetype
+
+
+## proste requesty do uruchomienia zdalnie
+
+komenda curl z adresem servera plainedit
+
+uruchamia instancje
+odpala
+zakańcza proces w ciagu 30 sekund
+kazda instancja jest przypisana do uzytkownika
+
+
+user.plainedit.com/:user/:script
+zapisywanie skytpu do pozniejszego uzycia
+kolekcja skryptow i projektow online 
+zapisz zmien, supportowane przez git
+
+
+## deploy z url github/gitlab
+
+TYLKO PUBLICZNE
+git.plainedit.com/:user
+lista wyboru jaki projekt
+
+generowanie wynikowego URL z wykonywanym markdownem
+
+dla klientow VIP wykonywane za kazdym razem
+
+dla klientow premium wykonywane co 1 minutę 
++ 1/msc
+dla kont FREE kilka 1 raz na godzine
+  + fundacje
+  + szkoły
+
+
+github.plainedit.com/:user/:
+gitlab.plainedit.com/:user/:script
 
 

@@ -1,4 +1,11 @@
 #!/bin/bash
+# CONTRIBUTION
+## Author: Tom Sapletta
+## Created Date: 25.04.2022
+
+LOGS="logs.txt"
+
+
 echo "PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the output of those processes to a different codeblock."
 # CONFIG
 FILE=$1
@@ -13,6 +20,38 @@ SCRIPT_HIDE=
 FIRST_SEPARATOR_IN_LINE=
 ONLY_EXECUTED=
 #set -e
+
+# CONFIG
+## load all params: in out status
+
+# EXAMPLE
+# ./plainedit.sh
+# START
+if [ "$1" = "" ]; then
+  for FILE in */in.md; do
+    line=$(head -n 1 $FILE)
+    #echo "$FILE $line"
+    #echo PROTOCOL=${URL%%://*}
+    NO=${FILE%%/*}
+    echo "$NO. $line"
+  done
+  exit
+fi
+
+# EXAMPLE
+# ./plainedit.sh 1
+# ./plainedit.sh "1/in.md" "1/out.md" "1/auth.csv"
+# START
+if [ "$2" = "" ]; then
+  IN="$1/in.md"
+  OUT="$1/out.md"
+  AUTH="$1/auth.md"
+else
+  # ./plainedit.sh "2/in.md" "2/out.md" "2/status.md"
+  IN=$1
+  OUT=$2
+  AUTH=$3
+fi
 # EXAMPLE
 # ./plainedit "test.md" "test_out.md"
 # START
