@@ -157,8 +157,8 @@ while IFS= read -r LINE; do
         echo "${SEPARATOR}${SCRIPT_LANGUAGE}" >> $FILE_OUT
         CMD="sh"
         [[ $SCRIPT_LANGUAGE != 'bash' ]] && CMD=$SCRIPT_LANGUAGE
-        SCRIPT_CMD="./script/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
-        [[ $SCRIPT_LANGUAGE == 'php' ]] && SCRIPT_CMD="$CMD script/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
+        SCRIPT_CMD=".$dir_path/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
+        [[ $SCRIPT_LANGUAGE == 'php' ]] && SCRIPT_CMD="$CMD $dir_path/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
         #EXECUTE="$CMD $SCRIPT_FILE"
         echo "$SCRIPT_CMD"
         # Redirected stderr to stdout, stdout to FILE
