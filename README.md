@@ -39,6 +39,7 @@ PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the
 
 
 ## EXAMPLE:
+
 Input and output file
 ```bash
 ./plainedit.sh "test.md" "test_out.md"
@@ -126,14 +127,39 @@ pod2text test_out.md
 
 ## TODO:
 
-### RUN REMOTE:
 
+### Uruchamianie w środowisku lokalnym Docker
+
+Obsługiwane języki programowania:
++ bash
++ sh
++ php
++ js
++ java
+
+
+### Środowiska:
+
++ ENV per LANG: python env, npm
++ plik konfiguracyjny
++ wirtualne środowisko do uruchamiania skryptów, np docker
++ uruchamianie zdalnie poprzez SSH, dla kazdej komendy na oddzielnej maszynie
+  + testy na dockerach
++ wysyłanie email z załącznikiem markdown po wygenerowaniu:
+  + ./plainedit.sh "test.md" "test_out.md" "test@test.com"
+
+
+### RUN REMOTE:
 + uruchamianie na zewnętrznej, zdalnej maszynie
 + pobieranie dodatkowych tresci ze zdalnych usług poprzez API,
   + np korekta kodu
 
-INPUT 
-OUTPUT autokorekta z API
+## RUN with API
+
++ INPUT 
++ OUTPUT request autokorekta z API
+
+## Examin tests
 
 student otrzymuje arkusz z zadaniami
 wypelnia pola INPUT
@@ -143,25 +169,21 @@ Nauczyciel sprawdza zadania automatycznie po uruchomieniu
 pattern > */
 output > start validation
 
-+ repo do examples z przykładem ładowania
 
-### COMMAND
+### INTERNAL COMMAND
+
 + obsługa XPATH, ładowanie skrawka strony
-
-[Parsing HTML with Xpath](https://scrapfly.io/blog/parsing-html-with-xpath/)
-
 Xpath and markdown – how to interoperate
-
-
-zachowania plainedit przy przetwarzaniu skryptów:
+[Parsing HTML with Xpath](https://scrapfly.io/blog/parsing-html-with-xpath/)
 
 
 ### FLAGI + CONFIG
 
+FLAGI służą do określenia zachowania plainedit przy przetwarzaniu skryptów
+
 FlAGI ustawiane domyślne z pliku konfiguracyjnego o nazwie: 
 
 .plainedit.cfg
-
 
 Przykładowe flagi przy skrypcie:
 
@@ -178,15 +200,11 @@ OUTPUT:
   + pokaż output jako text, DEFAULT: [TEXT]
 + pokaż output jako wykryty mimetype, [PNG] [GIF] [HEX] [BASE64] [HTML]
 
+### konfiguracja
 
-### obsługiwane języki programowania
-
-+ czy string zawiera jakikolwiek skrypt z listy:
-  + bash
-  + sh
-  + php
-  + js
-  + java
+ładowanie konfiguracji lokalnie i z zewnątrz
+.plainedit.cfg
+autoryzacja do usług: API, SSH, itd
 
 
 ### obsługa różnych mimietype:
@@ -194,16 +212,6 @@ OUTPUT:
 + obsługa CURL API
 + obsługa CURL HTML -> SCREENSHOT i załączenie PNG
 + obsługa CURL z kolorwaniem i formatami + auth
-
-### Środowiska:
-
-+ ENV per LANG: python env, npm
-+ plik konfiguracyjny
-+ wirtualne środowisko do uruchamiania skryptów, np docker
-+ uruchamianie zdalnie poprzez SSH, dla kazdej komendy na oddzielnej maszynie
-  + testy na dockerach
-+ wysyłanie email z załącznikiem markdown po wygenerowaniu:
-  + ./plainedit.sh "test.md" "test_out.md" "test@test.com"
 
 ### Marketplaces
 
@@ -230,7 +238,7 @@ pobieranie bibliotek w celu wykonania
 + screenshot.plainedit.com/:url/:mimetype
 
 
-## proste requesty do uruchomienia zdalnie
+### proste requesty do uruchomienia zdalnie
 
 komenda curl z adresem servera plainedit
 
@@ -246,7 +254,7 @@ kolekcja skryptow i projektow online
 zapisz zmien, supportowane przez git
 
 
-## deploy z url github/gitlab
+### deploy z url github/gitlab
 
 TYLKO PUBLICZNE
 git.plainedit.com/:user
