@@ -5,8 +5,6 @@
 PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the output of those processes to a different codeblock.
 
 
-## MENU
-
 + [Usecases - examples.plainedit.com](http://examples.plainedit.com/)
 + [Documentation - docs.plainedit.com](http://docs.plainedit.com/)
 + [Website - www.plainedit.com](http://www.plainedit.com/)
@@ -20,6 +18,13 @@ PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the
 
 + can be repeated many times such report with sending as content or attachement in e-mail message
 + can help another dev/ops in team to make step by step daily tasks with projects
+
+Supported languages:
+
++ sh/bash
++ php
++ js
++ java
 
 ### BENEFITS
 
@@ -124,50 +129,7 @@ pod2text test_out.md
 
 
 
-
 ## TODO:
-
-
-### Uruchamianie w środowisku lokalnym Docker
-
-Obsługiwane języki programowania:
-+ bash
-+ sh
-+ php
-+ js
-+ java
-
-
-### Środowiska:
-
-+ ENV per LANG: python env, npm
-+ plik konfiguracyjny
-+ wirtualne środowisko do uruchamiania skryptów, np docker
-+ uruchamianie zdalnie poprzez SSH, dla kazdej komendy na oddzielnej maszynie
-  + testy na dockerach
-+ wysyłanie email z załącznikiem markdown po wygenerowaniu:
-  + ./plainedit.sh "test.md" "test_out.md" "test@test.com"
-
-
-### RUN REMOTE:
-+ uruchamianie na zewnętrznej, zdalnej maszynie
-+ pobieranie dodatkowych tresci ze zdalnych usług poprzez API,
-  + np korekta kodu
-
-## RUN with API
-
-+ INPUT 
-+ OUTPUT request autokorekta z API
-
-## Examin tests
-
-student otrzymuje arkusz z zadaniami
-wypelnia pola INPUT
-
-Nauczyciel sprawdza zadania automatycznie po uruchomieniu
-
-pattern > */
-output > start validation
 
 
 ### INTERNAL COMMAND
@@ -213,13 +175,48 @@ autoryzacja do usług: API, SSH, itd
 + obsługa CURL HTML -> SCREENSHOT i załączenie PNG
 + obsługa CURL z kolorwaniem i formatami + auth
 
+
+### Środowiska:
+
++ ENV per LANG: python env, npm
++ plik konfiguracyjny
++ wirtualne środowisko do uruchamiania skryptów, np docker
++ uruchamianie zdalnie poprzez SSH, dla kazdej komendy na oddzielnej maszynie
+  + testy na dockerach
++ wysyłanie email z załącznikiem markdown po wygenerowaniu:
+  + ./plainedit.sh "test.md" "test_out.md" "test@test.com"
+
+
 ### Marketplaces
 
-pobieranie bibliotek w celu wykonania 
+pobieranie bibliotek w celu wykonania
 + Ładowanie z npm
 
 
-### Lokalne srodowisko w przeglądarce:
+### RUN REMOTE:
++ uruchamianie na zewnętrznej, zdalnej maszynie
++ pobieranie dodatkowych tresci ze zdalnych usług poprzez API,
+  + np korekta kodu
+
+## RUN with API
+
++ INPUT
++ OUTPUT request autokorekta z API
+
+## Examin tests
+
+student otrzymuje arkusz z zadaniami
+wypelnia pola INPUT
+
+Nauczyciel sprawdza zadania automatycznie po uruchomieniu
+
+pattern > */
+output > start validation
+
+
+### Uruchamianie w środowisku lokalnym Docker
+
+Lokalne srodowisko w przeglądarce:
 
 1. lokalny client i serwer + lokalny shell
 2. lokalny client i serwer + docker
