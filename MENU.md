@@ -3,9 +3,7 @@
 
 # [Sourcecode - bash.plainedit.com](http://bash.plainedit.com/)
 
-
-## [offer.plainedit.com](http://offer.plainedit.com/)
-
++ [offer.plainedit.com](http://offer.plainedit.com/)
 + [Usecases - examples.plainedit.com](http://examples.plainedit.com/)
 + [Documentation - docs.plainedit.com](http://docs.plainedit.com/)
 + [Website - www.plainedit.com](http://www.plainedit.com/)
