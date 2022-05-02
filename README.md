@@ -17,7 +17,7 @@
 
 ---
 
-[here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/MENU.md)
+> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/MENU.md)
 
 ---
 
@@ -142,7 +142,7 @@ Markdow in Project Folder
 
 ---
 
-[here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/START.md)
+> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/START.md)
 
 ---
 
@@ -179,7 +179,7 @@ Authorisation
 
 ---
 
-[here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/PROJECTS.md)
+> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/PROJECTS.md)
 
 ---
 ## FLAGS
@@ -199,7 +199,7 @@ example with FLAGS
 
 ---
 
-[here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/FLAGS.md)
+> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/FLAGS.md)
 
 ---
 ## EXAMPLE
@@ -272,7 +272,7 @@ Apple
 
 ---
 
-[here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/EXAMPLE.md)
+> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/EXAMPLE.md)
 
 ---
 
@@ -292,7 +292,7 @@ pod2text test_out.md
 
 ---
 
-[here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/DOCS.md)
+> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/DOCS.md)
 
 ---
 

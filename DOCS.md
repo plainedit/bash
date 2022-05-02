@@ -15,6 +15,6 @@ pod2text test_out.md
 
 ---
 
-[here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/DOCS.md)
+> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/DOCS.md)
 
 ---
