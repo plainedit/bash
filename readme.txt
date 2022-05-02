@@ -1,7 +1,7 @@
 ../tutorial/ABOUT.md
 ../../softreck/www/ABOUT.md
-./MENU.md >> README.md
-./ABOUT.md >> README.md
-./START.md >> README.md
-./DOCS.md >> README.md
+./MENU.md
+./ABOUT.md
+./START.md
+./DOCS.md
 ../roadmap/ROADMAP.md

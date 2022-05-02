@@ -20,8 +20,6 @@
 
 ---
 
-
-
 ## About  PlainEdit 
 
 PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the output of those processes to a different codeblock.
@@ -117,8 +115,6 @@ It is so simple that it doesn't have any user management (KISS philosophy).
 ---
 
 
-
-
 ## START PlainEdit Script
 
 Input and output file with results:
@@ -203,8 +199,6 @@ Apple
 ---
 
 
-
-
 ## DOCS
 
 ### markdown
@@ -224,8 +218,6 @@ pod2text test_out.md
 [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/DOCS.md)
 
 ---
-
-
 
 ## ROADMAP
 
