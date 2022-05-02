@@ -6,13 +6,14 @@
 
 # [Sourcecode - bash.plainedit.com](http://bash.plainedit.com/)
 
-+ [offer.plainedit.com](http://offer.plainedit.com/)
++ [Offer - offer.plainedit.com](http://offer.plainedit.com/)
 + [Usecases - examples.plainedit.com](http://examples.plainedit.com/)
 + [Documentation - docs.plainedit.com](http://docs.plainedit.com/)
 + [Website - www.plainedit.com](http://www.plainedit.com/)
 + [News - blog.plainedit.com](http://blog.plainedit.com/)
 + [Offer - offer.plainedit.com](http://offer.plainedit.com/)
 + [logo.plainedit.com](https://logo.plainedit.com/)
++ [LICENSE](LICENSE)
 
 ---
 
@@ -115,11 +116,21 @@ It is so simple that it doesn't have any user management (KISS philosophy).
 ---
 
 
-## START PlainEdit Script
+## Start using PlainEdit
 
-Input and output file with results:
+List of projects
 ```bash
-./plainedit.sh "test.md" "test_out.md"
+./plainedit.sh
+```
+
+Run macro for 1/in.md
+```bash
+./plainedit.sh 1
+```
+
+INPUT and OUTPUT file
+```bash
+./plainedit.sh "in.md" "out.md"
 ```
 
 Markdow in Project Folder
@@ -127,8 +138,75 @@ Markdow in Project Folder
 ./plainedit.sh "1/in.md" "1/out.md"
 ```
 
+
+
+---
+
+[here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/START.md)
+
+---
+
+## PROJECTS
+
+Working with projects structure folder
+
+files structure
+```
+1
+    in.md
+    out.md
+2
+    in.md
+    out.md
+```
+
+The same, with folders
+```bash
+./plainedit "1/in.md" "1/out.md" 
+```
+
+Config Path where the project folder exist
+```bash
+./plainedit --path "/media/tom/projects/plainedit/examples/1" "in.md" "out.md"
+```
+
+Authorisation
+```bash
+./plainedit "1/in.md" "1/out.md" "1/auth.md"
+```
+
+
+
+---
+
+[here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/PROJECTS.md)
+
+---
+## FLAGS
+
+### show only code
+example with FLAGS
++ [IN ](1/in.md)
++ [OUT ](1/out.md)
+
+### show only code at selected script
+example with FLAGS
++ [IN ](2/in.md)
++ [OUT ](2/out.md)
+
+
+
+
+---
+
+[here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/FLAGS.md)
+
+---
+## EXAMPLE
+
 PlainEdit can be executed from another bash script with defined path
 Look at examples: [Examples - examples.plainedit.com](https://examples.plainedit.com/)
+
 ```bash
 ./plainedit.sh --path "/media/tom/projects/plainedit/1" "in.md" "out.md"
 ```
@@ -193,11 +271,10 @@ Apple
 ```
 
 ---
- 
-[here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/START.md) 
+
+[here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/EXAMPLE.md)
 
 ---
-
 
 ## DOCS
 

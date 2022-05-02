@@ -3,13 +3,14 @@
 
 # [Sourcecode - bash.plainedit.com](http://bash.plainedit.com/)
 
-+ [offer.plainedit.com](http://offer.plainedit.com/)
++ [Offer - offer.plainedit.com](http://offer.plainedit.com/)
 + [Usecases - examples.plainedit.com](http://examples.plainedit.com/)
 + [Documentation - docs.plainedit.com](http://docs.plainedit.com/)
 + [Website - www.plainedit.com](http://www.plainedit.com/)
 + [News - blog.plainedit.com](http://blog.plainedit.com/)
 + [Offer - offer.plainedit.com](http://offer.plainedit.com/)
 + [logo.plainedit.com](https://logo.plainedit.com/)
++ [LICENSE](LICENSE)
 
 ---
 

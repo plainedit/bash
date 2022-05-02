@@ -3,5 +3,8 @@
 ./MENU.md
 ./ABOUT.md
 ./START.md
+./PROJECTS.md
+./FLAGS.md
+./EXAMPLE.md
 ./DOCS.md
 ../roadmap/ROADMAP.md
