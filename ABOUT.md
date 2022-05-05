@@ -78,6 +78,10 @@ It is so simple that it doesn't have any user management (KISS philosophy).
 
 ## Use Cases:
 
++ starting all 
++ starting step by step, each 2sec.
++ starting manual, by click/start script
+
 ### Community
 
 + Schools
