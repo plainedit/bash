@@ -38,12 +38,18 @@ Plain editor written in Bash, it's a single bash scripts with modular architectu
 
 It is so simple that it doesn't have any user management (KISS philosophy).
 
+
 ### Features
 
 + File-based using a Git repository
 + Content optionally generated statically
 + Markdown syntax
 
+
+### Data Templates
+
++ Content as flow step by step 
++ Table CSV with imported data
 
 ### Dependencies
 
@@ -89,6 +95,10 @@ It is so simple that it doesn't have any user management (KISS philosophy).
 
 
 ## Use Cases:
+
++ starting all 
++ starting step by step, each 2sec.
++ starting manual, by click/start script
 
 ### Community
 
