@@ -1,4 +1,4 @@
-## FLAGS
+## FLAGS [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/FLAGS.md)
 
 ### show only code
 example with FLAGS
@@ -11,10 +11,3 @@ example with FLAGS
 + [OUT ](2/out.md)
 
 
-
-
----
-
-> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/FLAGS.md)
-
----

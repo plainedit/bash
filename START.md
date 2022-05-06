@@ -1,6 +1,6 @@
 
 
-## Start using PlainEdit
+## Start using PlainEdit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/START.md)
 
 List of projects
 ```bash
@@ -23,9 +23,3 @@ Markdow in Project Folder
 ```
 
 
-
----
-
-> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/START.md)
-
----

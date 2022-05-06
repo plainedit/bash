@@ -1,5 +1,5 @@
 
-## About  PlainEdit 
+## About [PlainEdit](https://www.plainedit.com) [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/ABOUT.md) 
 
 PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the output of those processes to a different codeblock.
 Plain editor written in Bash, it's a single bash scripts with modular architecture opened for an extension scripts.
@@ -85,10 +85,3 @@ It is so simple that it doesn't have any user management (KISS philosophy).
 + Documentation on sever side for DevOps, Fullstack Devs
 + Reports, import export settings from differents server at one moment, at one time
 + Portfolios with imported data from list of resources
-
-
----
-
-> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/ABOUT.md)
-
----

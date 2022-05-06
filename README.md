@@ -4,7 +4,7 @@
 
 ![logo](http://logo.plainedit.com/2/cover.png)
 
-# [Sourcecode - bash.plainedit.com](http://bash.plainedit.com/)
+# [Sourcecode - bash.plainedit.com](http://bash.plainedit.com/) [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/MENU.md)
 
 + [Offer - offer.plainedit.com](http://offer.plainedit.com/)
 + [Usecases - examples.plainedit.com](http://examples.plainedit.com/)
@@ -15,13 +15,9 @@
 + [logo.plainedit.com](https://logo.plainedit.com/)
 + [LICENSE](LICENSE)
 
----
 
-> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/MENU.md)
 
----
-
-## About  PlainEdit 
+## About [PlainEdit](https://www.plainedit.com) [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/ABOUT.md) 
 
 PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the output of those processes to a different codeblock.
 Plain editor written in Bash, it's a single bash scripts with modular architecture opened for an extension scripts.
@@ -109,14 +105,8 @@ It is so simple that it doesn't have any user management (KISS philosophy).
 + Portfolios with imported data from list of resources
 
 
----
 
-> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/ABOUT.md)
-
----
-
-
-## Start using PlainEdit
+## Start using PlainEdit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/START.md)
 
 List of projects
 ```bash
@@ -140,13 +130,8 @@ Markdow in Project Folder
 
 
 
----
 
-> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/START.md)
-
----
-
-## PROJECTS
+## PROJECTS [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/PROJECTS.md)
 
 Working with projects structure folder
 
@@ -182,7 +167,7 @@ Authorisation
 > [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/PROJECTS.md)
 
 ---
-## FLAGS
+## FLAGS [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/FLAGS.md)
 
 ### show only code
 example with FLAGS
@@ -196,13 +181,7 @@ example with FLAGS
 
 
 
-
----
-
-> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/FLAGS.md)
-
----
-## EXAMPLE
+## EXAMPLE [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/EXAMPLE.md)
 
 PlainEdit can be executed from another bash script with defined path
 Look at examples: [Examples - examples.plainedit.com](https://examples.plainedit.com/)
@@ -270,13 +249,8 @@ EXECUTED php:
 Apple
 ```
 
----
 
-> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/EXAMPLE.md)
-
----
-
-## DOCS
+## DOCS [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/DOCS.md)
 
 ### markdown
 
@@ -290,11 +264,6 @@ pod2text test_out.md
 + [Bash Split String Examples](https://linuxhint.com/bash_split_examples/)
 
 
----
-
-> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/DOCS.md)
-
----
 
 ## ROADMAP
 
@@ -528,3 +497,8 @@ gitlab.plainedit.com/:user/:script
  > [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/roadmap/edit/main/ROADMAP.md)
 
 ---
+
+---
+
++ [edit](https://github.com/plainedit/bash/edit/main/README.md)
++ [plainedit/bash](https://github.com/plainedit/bash)

@@ -1,5 +1,5 @@
 
-## PROJECTS
+## PROJECTS [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/PROJECTS.md)
 
 Working with projects structure folder
 

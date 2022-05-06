@@ -1,4 +1,4 @@
-## EXAMPLE
+## EXAMPLE [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/EXAMPLE.md)
 
 PlainEdit can be executed from another bash script with defined path
 Look at examples: [Examples - examples.plainedit.com](https://examples.plainedit.com/)
@@ -65,9 +65,3 @@ EXECUTED php:
 ```php
 Apple
 ```
-
----
-
-> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/EXAMPLE.md)
-
----

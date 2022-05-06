@@ -8,3 +8,4 @@
 ./EXAMPLE.md
 ./DOCS.md
 ../roadmap/ROADMAP.md
+./FOOT.md
