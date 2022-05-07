@@ -1,38 +1,12 @@
-# bash.plainedit.com
+# www.bashfunc.com
 
-# WHOAMI hide_input
-
-My name is:
-
-```bash hide_input
-whoami
-```
-
-
-## MKDIR hide_output
-
-Create new Folder
-
-```bash hide_output
-mkdir TEST
-```
-
-## MKDIR 2
+## MKDIR
 
 Create new Folder
 
 ```bash
 mkdir TEST
 ```
-
-## LS
-
-Show your folders
-
-```bash hide_input render_html 
-ls -la
-```
-
 
 ## PHP version
 

@@ -52,7 +52,7 @@ if [ "$FIRST" = "" ]; then
     NO=${FILE%%/*}
     echo "$NO. $line"
   done
-  echo `date +"%T.%3N"` >> $LOGS
+  echo "`date +"%T.%3N"` STOP" >> $LOGS
   echo "DEBUG LOGS:"
   cat $LOGS
   exit
@@ -89,11 +89,10 @@ echo "`date +"%T.%3N"` OUT: $FILE_OUT" >> $LOGS
 echo "" > $FILE_OUT
 SCRIPT_COUNTER=0
 
-
 ## read line by LINE
 while IFS= read -r LINE; do
 
-  #echo "`date +"%T.%3N"` NEXT_LINE" >> $LOGS
+  #  echo "`date +"%T.%3N"` NEXT_LINE" >> $LOGS
 
   # save line by line to new file:
   #FOLDER_NAME=${BRANCH//.git}
@@ -115,7 +114,6 @@ while IFS= read -r LINE; do
      #echo "$FLAGS"
      #echo "$LANGUAGE"
      #echo "$HIDE"
-
   esac
 
 
@@ -144,7 +142,6 @@ while IFS= read -r LINE; do
         echo ""
         echo "$LINE" >> $FILE_OUT
       fi
-
       #echo "$LINE" >> $FILE_OUT
       continue
   fi

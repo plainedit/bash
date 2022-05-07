@@ -1,3 +1,7 @@
+readme.logs.txt
+logs.txt
+out.md
+PROJECTS_LOCAL.md
 script
 script_out
 */*.sh
@@ -12,7 +16,6 @@ error
 test_out.md
 .idea
 # Logs
-out.md
 logs
 logs.txt
 *.log
