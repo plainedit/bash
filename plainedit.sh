@@ -4,7 +4,8 @@
 ## Created Date: 25.04.2022
 
 LOGS="logs.txt"
-
+#CURRENTDATE=`date +"%Y-%m-%d"`
+echo "`date +"%T.%3N"` START" > $LOGS
 
 echo "PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the output of those processes to a different codeblock."
 # CONFIG
@@ -31,20 +32,20 @@ dir_path=$(dirname $full_path)
 
 ## load all params: in out status
 if [ "$1" = "--path" ]; then
-  echo "HAS_PATH" > $LOGS
+  echo "`date +"%T.%3N"` HAS_PATH" >> $LOGS
   dir_path=$2
   #IN=$3
   #OUT=$4
   FIRST=$3
   SECOND=$4
 fi
-echo "PATH: $dir_path"
+echo "`date +"%T.%3N"` PATH: $dir_path" >> $LOGS
 
 # EXAMPLE
 # ./plainedit.sh
 
 if [ "$FIRST" = "" ]; then
-  echo "FIRST_EMPTY" > $LOGS
+  echo "`date +"%T.%3N"` FIRST_EMPTY" >> $LOGS
   for FILE in */in.md; do
     line=$(head -n 1 $FILE)
     #echo "$FILE $line"
@@ -52,6 +53,9 @@ if [ "$FIRST" = "" ]; then
     NO=${FILE%%/*}
     echo "$NO. $line"
   done
+  echo `date +"%T.%3N"` >> $LOGS
+  echo "DEBUG LOGS:"
+  cat $LOGS
   exit
 fi
 
@@ -60,7 +64,7 @@ fi
 # ./plainedit.sh "1/in.md" "1/out.md" "1/auth.csv"
 
 if [ "$FIRST" != "" ] && [ "$SECOND" = "" ]; then
-  echo "FIRST_NOT_EMPTY SECOND_EMPTY" > $LOGS
+  echo "`date +"%T.%3N"` FIRST_NOT_EMPTY SECOND_EMPTY" >> $LOGS
   dir_path="$dir_path/$FIRST"
   IN="in.md"
   OUT="out.md"
@@ -68,7 +72,7 @@ if [ "$FIRST" != "" ] && [ "$SECOND" = "" ]; then
   #OUT="$FIRST/out.md"
   #AUTH="$FIRST/auth.md"
 else
-  echo "SECOND_NOT_EMPTY" > $LOGS
+  echo "`date +"%T.%3N"` SECOND_NOT_EMPTY" >> $LOGS
   IN=$FIRST
   OUT=$SECOND
 fi
@@ -79,8 +83,8 @@ fi
 
 FILE_IN=${dir_path}/${IN}
 FILE_OUT=${dir_path}/${OUT}
-echo "IN: $FILE_IN"
-echo "OUT: $FILE_OUT"
+echo "`date +"%T.%3N"` IN: $FILE_IN" >> $LOGS
+echo "`date +"%T.%3N"` OUT: $FILE_OUT" >> $LOGS
 #
 echo "" > $FILE_OUT
 SCRIPT_COUNTER=0
@@ -88,6 +92,8 @@ SCRIPT_COUNTER=0
 
 ## read line by LINE
 while IFS= read -r LINE; do
+
+  #echo "`date +"%T.%3N"` NEXT_LINE" >> $LOGS
 
   # save line by line to new file:
   #FOLDER_NAME=${BRANCH//.git}
@@ -166,12 +172,17 @@ while IFS= read -r LINE; do
         echo "${SEPARATOR}${SCRIPT_LANGUAGE}" >> $FILE_OUT
         CMD="sh"
         [[ $SCRIPT_LANGUAGE != 'bash' ]] && CMD=$SCRIPT_LANGUAGE
-        SCRIPT_CMD=".$dir_path/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
-        [[ $SCRIPT_LANGUAGE == 'php' ]] && SCRIPT_CMD="$CMD $dir_path/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
+        #[[ $SCRIPT_LANGUAGE == 'php' ]] && CMD="php"
+        SCRIPT_CMD="$CMD $dir_path/$SCRIPT_COUNTER.$SCRIPT_LANGUAGE"
         #EXECUTE="$CMD $SCRIPT_FILE"
-        echo "$SCRIPT_CMD"
+        echo "`date +"%T.%3N"` SCRIPT_CMD: $SCRIPT_CMD" >> $LOGS
+
         # Redirected stderr to stdout, stdout to FILE
-        { OUTPUT=$( $SCRIPT_CMD 2>>$FILE_OUT 1>&$out); } {out}>>$FILE_OUT
+        #{
+        OUTPUT=$( $SCRIPT_CMD 2>>$FILE_OUT 1>>$FILE_OUT);
+        #} {out}>>$FILE_OUT
+        echo $OUTPUT
+        #echo $FILE_OUT
         #echo "" >> $FILE_OUT
 
         echo -e "\n$SEPARATOR" >> $FILE_OUT
@@ -193,3 +204,7 @@ while IFS= read -r LINE; do
 
 
 done < $FILE_IN
+
+echo "`date +"%T.%3N"` STOP" >> $LOGS
+echo "DEBUG LOGS:"
+cat $LOGS
