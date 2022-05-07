@@ -5,7 +5,7 @@
 ./DOCS/START.md
 ./DOCS/PROJECTS.md
 ./DOCS/FLAGS.md
-./DOCS/EXAMPLE.md
+./DOCS/EXAMPLE_IMG.md
 ./DOCS/DOCS.md
 ../roadmap/DOCS/ROADMAP.md
 ./DOCS/FOOT.md
