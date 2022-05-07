@@ -61,10 +61,11 @@ fi
 
 if [ "$FIRST" != "" ] && [ "$SECOND" = "" ]; then
   echo "FIRST_NOT_EMPTY SECOND_EMPTY" > $LOGS
-  #IN="in.md"
-  IN="$FIRST/in.md"
-  #OUT="out.md"
-  OUT="$FIRST/out.md"
+  dir_path="$dir_path/$FIRST"
+  IN="in.md"
+  OUT="out.md"
+  #IN="$FIRST/in.md"
+  #OUT="$FIRST/out.md"
   #AUTH="$FIRST/auth.md"
 else
   echo "SECOND_NOT_EMPTY" > $LOGS
