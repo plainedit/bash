@@ -1,4 +1,4 @@
-## EXAMPLE [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/EXAMPLE.md)
+## EXAMPLE [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/DOCS/EXAMPLE.md)
 
 PlainEdit can be executed from another bash script with defined path
 Look at examples: [Examples - examples.plainedit.com](https://examples.plainedit.com/)

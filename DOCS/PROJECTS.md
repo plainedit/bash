@@ -1,5 +1,5 @@
 
-## PROJECTS [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/PROJECTS.md)
+## PROJECTS [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/DOCS/PROJECTS.md)
 
 Working with projects structure folder
 
@@ -28,10 +28,3 @@ Authorisation
 ./plainedit "1/in.md" "1/out.md" "1/auth.md"
 ```
 
-
-
----
-
-> [here You can maintain the content for your website in Markdown files](https://github.com/plainedit/bash/edit/main/PROJECTS.md)
-
----
