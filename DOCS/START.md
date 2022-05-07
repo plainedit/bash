@@ -1,5 +1,4 @@
 
-
 ## Start using PlainEdit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/DOCS/START.md)
 
 List of projects
@@ -21,5 +20,4 @@ Markdow in Project Folder
 ```bash
 ./plainedit.sh "1/in.md" "1/out.md"
 ```
-
 

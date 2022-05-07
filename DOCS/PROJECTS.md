@@ -19,6 +19,7 @@ The same, with folders
 ```
 
 Config Path where the project folder exist
+PlainEdit can be executed from another bash script with defined path, lLook at examples: [Examples - examples.plainedit.com](https://examples.plainedit.com/)
 ```bash
 ./plainedit --path "/media/tom/projects/plainedit/examples/1" "in.md" "out.md"
 ```

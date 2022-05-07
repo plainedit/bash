@@ -114,7 +114,6 @@ It is so simple that it doesn't have any user management (KISS philosophy).
 + Portfolios with imported data from list of resources
 
 
-
 ## Start using PlainEdit [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/DOCS/START.md)
 
 List of projects
@@ -139,7 +138,6 @@ Markdow in Project Folder
 
 
 
-
 ## PROJECTS [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/DOCS/PROJECTS.md)
 
 Working with projects structure folder
@@ -160,6 +158,7 @@ The same, with folders
 ```
 
 Config Path where the project folder exist
+PlainEdit can be executed from another bash script with defined path, lLook at examples: [Examples - examples.plainedit.com](https://examples.plainedit.com/)
 ```bash
 ./plainedit --path "/media/tom/projects/plainedit/examples/1" "in.md" "out.md"
 ```
@@ -188,7 +187,6 @@ example with FLAGS
 
 ![example-black-plainedit.com.png](DOCS/example-black-plainedit.com.png)
 
-PlainEdit can be executed from another bash script with defined path
 Look at examples: [Examples - examples.plainedit.com](https://examples.plainedit.com/)
 
 
