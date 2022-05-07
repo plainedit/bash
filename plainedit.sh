@@ -2,13 +2,14 @@
 # CONTRIBUTION
 ## Author: Tom Sapletta
 ## Created Date: 25.04.2022
+#set -e
 
-LOGS="logs.txt"
-#CURRENTDATE=`date +"%Y-%m-%d"`
-echo "`date +"%T.%3N"` START" > $LOGS
+# EXAMPLE
+# ./plainedit.sh "2/in.md" "2/out.md" "2/status.md"
 
-echo "PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the output of those processes to a different codeblock."
 # CONFIG
+LOGS="logs.txt"
+echo "`date +"%T.%3N"` START" > $LOGS
 FILE_IN=$1
 FILE_OUT=$2
 BASHLINE=
@@ -20,9 +21,7 @@ LANGUAGE=
 SCRIPT_HIDE=
 FIRST_SEPARATOR_IN_LINE=
 ONLY_EXECUTED=
-#set -e
 
-# ./plainedit.sh "2/in.md" "2/out.md" "2/status.md"
 
 # CONFIG
 FIRST=$1
@@ -80,7 +79,8 @@ fi
 # EXAMPLE
 # ./plainedit "test.md" "test_out.md"
 
-
+# START
+echo "PLAINEDIT takes markdown, evaluates code blocks with interpreters and prints the output of those processes to a different codeblock."
 FILE_IN=${dir_path}/${IN}
 FILE_OUT=${dir_path}/${OUT}
 echo "`date +"%T.%3N"` IN: $FILE_IN" >> $LOGS
