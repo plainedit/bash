@@ -1,6 +1,6 @@
 # bash.plainedit.com
 
-# WHOAMI
+# WHOAMI hide_input
 
 My name is:
 
@@ -9,7 +9,7 @@ whoami
 ```
 
 
-## MKDIR
+## MKDIR hide_output
 
 Create new Folder
 
@@ -17,6 +17,13 @@ Create new Folder
 mkdir TEST
 ```
 
+## MKDIR 2
+
+Create new Folder
+
+```bash
+mkdir TEST
+```
 
 ## LS
 

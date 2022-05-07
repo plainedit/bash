@@ -178,14 +178,14 @@ while IFS= read -r LINE; do
         echo "`date +"%T.%3N"` SCRIPT_CMD: $SCRIPT_CMD" >> $LOGS
 
         # Redirected stderr to stdout, stdout to FILE
-        #{
-        OUTPUT=$( $SCRIPT_CMD 2>>$FILE_OUT 1>>$FILE_OUT);
-        #} {out}>>$FILE_OUT
-        echo $OUTPUT
+        # Another way to redirect stderr to stdout is to use the &> construct. In Bash &> has the same meaning as 2>&1:
+        $SCRIPT_CMD &>>$FILE_OUT
+        #echo $OUTPUT
         #echo $FILE_OUT
         #echo "" >> $FILE_OUT
+        [[ $SCRIPT_LANGUAGE != 'bash' ]] && echo -e "" >> $FILE_OUT
+        echo -e "$SEPARATOR" >> $FILE_OUT
 
-        echo -e "\n$SEPARATOR" >> $FILE_OUT
         SCRIPT_HIDE=
         continue
       fi
