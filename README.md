@@ -121,21 +121,28 @@ List of projects
 ./plainedit.sh
 ```
 
-Run macro for 1/in.md
-```bash
-./plainedit.sh 1
-```
-
 INPUT and OUTPUT file
 ```bash
 ./plainedit.sh "in.md" "out.md"
 ```
 
-Markdow in Project Folder
+Run macro for 1/in.md
+```bash
+./plainedit.sh 1
+```
+
+Markdown in Project Folder
 ```bash
 ./plainedit.sh "1/in.md" "1/out.md"
 ```
 
+Config Path where the project folder exist
+PlainEdit can be executed from another bash script with defined path, look at examples: [Examples - examples.plainedit.com](https://examples.plainedit.com/)
+
+It works here
+```bash
+./plainedit --path "/media/tom/projects/plainedit/examples/1" "in.md" "out.md"
+```
 
 
 ## PROJECTS [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/DOCS/PROJECTS.md)
@@ -152,21 +159,18 @@ files structure
     out.md
 ```
 
-The same, with folders
+
+Start Project no 1
 ```bash
-./plainedit "1/in.md" "1/out.md" 
+./plainedit.sh 1
 ```
 
-Config Path where the project folder exist
-PlainEdit can be executed from another bash script with defined path, lLook at examples: [Examples - examples.plainedit.com](https://examples.plainedit.com/)
+Start Project no 2
 ```bash
-./plainedit --path "/media/tom/projects/plainedit/examples/1" "in.md" "out.md"
+./plainedit.sh 2
 ```
 
-Authorisation
-```bash
-./plainedit "1/in.md" "1/out.md" "1/auth.md"
-```
+
 
 
 ## FLAGS [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/plainedit/bash/edit/main/DOCS/FLAGS.md)

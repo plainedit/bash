@@ -13,19 +13,16 @@ files structure
     out.md
 ```
 
-The same, with folders
+
+Start Project no 1
 ```bash
-./plainedit "1/in.md" "1/out.md" 
+./plainedit.sh 1
 ```
 
-Config Path where the project folder exist
-PlainEdit can be executed from another bash script with defined path, lLook at examples: [Examples - examples.plainedit.com](https://examples.plainedit.com/)
+Start Project no 2
 ```bash
-./plainedit --path "/media/tom/projects/plainedit/examples/1" "in.md" "out.md"
+./plainedit.sh 2
 ```
 
-Authorisation
-```bash
-./plainedit "1/in.md" "1/out.md" "1/auth.md"
-```
+
 
