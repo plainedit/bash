@@ -141,7 +141,7 @@ PlainEdit can be executed from another bash script with defined path, look at ex
 
 It works here
 ```bash
-./plainedit --path "/media/tom/projects/plainedit/examples/1" "in.md" "out.md"
+./plainedit.sh --path "/media/tom/projects/plainedit/examples/1" "in.md" "out.md"
 ```
 
 
