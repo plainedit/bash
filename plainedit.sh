@@ -21,8 +21,9 @@ FIRST_SEPARATOR_IN_LINE=
 ONLY_EXECUTED=
 #set -e
 
-# CONFIG
 # ./plainedit.sh "2/in.md" "2/out.md" "2/status.md"
+
+# CONFIG
 FIRST=$1
 SECOND=$2
 full_path=$(realpath $0)
@@ -30,6 +31,7 @@ dir_path=$(dirname $full_path)
 
 ## load all params: in out status
 if [ "$1" = "--path" ]; then
+  echo "HAS_PATH" > $LOGS
   dir_path=$2
   #IN=$3
   #OUT=$4
@@ -40,8 +42,9 @@ echo "PATH: $dir_path"
 
 # EXAMPLE
 # ./plainedit.sh
-# START
+
 if [ "$FIRST" = "" ]; then
+  echo "FIRST_EMPTY" > $LOGS
   for FILE in */in.md; do
     line=$(head -n 1 $FILE)
     #echo "$FILE $line"
@@ -55,20 +58,24 @@ fi
 # EXAMPLE
 # ./plainedit.sh 1
 # ./plainedit.sh "1/in.md" "1/out.md" "1/auth.csv"
-# START
-if [ "$SECOND" = "" ]; then
-  IN="in.md"
-  #IN="$FIRST/in.md"
-  OUT="out.md"
-  #OUT="$FIRST/out.md"
+
+if [ "$FIRST" != "" ] && [ "$SECOND" = "" ]; then
+  echo "FIRST_NOT_EMPTY SECOND_EMPTY" > $LOGS
+  #IN="in.md"
+  IN="$FIRST/in.md"
+  #OUT="out.md"
+  OUT="$FIRST/out.md"
   #AUTH="$FIRST/auth.md"
 else
+  echo "SECOND_NOT_EMPTY" > $LOGS
   IN=$FIRST
   OUT=$SECOND
 fi
+
 # EXAMPLE
 # ./plainedit "test.md" "test_out.md"
-# START
+
+
 FILE_IN=${dir_path}/${IN}
 FILE_OUT=${dir_path}/${OUT}
 echo "IN: $FILE_IN"
@@ -76,6 +83,7 @@ echo "OUT: $FILE_OUT"
 #
 echo "" > $FILE_OUT
 SCRIPT_COUNTER=0
+
 
 ## read line by LINE
 while IFS= read -r LINE; do
