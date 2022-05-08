@@ -1,2 +1,2 @@
-+ [/media/tom/projects/plainedit/bash](/media/tom/projects/plainedit/bash/)
-+ [1 # www.bashfunc.com](/media/tom/projects/plainedit/bash/1/index.html)
++ [/media/tom/projects/plainedit/bash](file:///media/tom/projects/plainedit/bash/)
++ [1 # www.bashfunc.com](file:///media/tom/projects/plainedit/bash/1/index.html)
